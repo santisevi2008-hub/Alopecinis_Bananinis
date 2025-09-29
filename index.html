@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alopecinis Calvinis - Solución Biotecnológica para la Alopecia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #8e44ad);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(142, 68, 173, 0.8)), url('https://i.ibb.co/4gnJ8zyX/Adobe-Stock-39635994-Converted-02-scaled-1-1024x722.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 2rem;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #8e44ad;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 5px solid #8e44ad;
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .design-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .design-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .bacteria-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .benchling-image {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid #bdc3c7;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 3rem 1rem;
+            }
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .colegio-info {
+            text-align: center;
+            margin-top: 1rem;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        .stat-box {
+            background: #8e44ad;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+        }
+        
+        .impact-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .impact-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .impact-card h4 {
+            color: #8e44ad;
+            margin-bottom: 1rem;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #8e44ad, #3498db);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .circuit-diagram {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid #8e44ad;
+        }
+        
+        .safety-notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-left: 5px solid #f39c12;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">Alopecinis Bananinis</div>
+            <nav>
+                <ul>
+                    <li><a href="#problema">Problema</a></li>
+                    <li><a href="#diseno">Diseño Genético</a></li>
+                    <li><a href="#resultados">Resultados Esperados</a></li>
+                    <li><a href="#impacto">Impacto Ético</a></li>
+                    <li><a href="#equipo">Equipo</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Solucionando la Alopecia con Biología Sintética</h1>
+        <p>Una aproximación innovadora para el tratamiento de la pérdida de cabello mediante ingeniería genética</p>
+        <a href="#problema" class="btn">Conoce Nuestro Proyecto</a>
+    </section>
+
+    <section id="problema" class="section">
+        <h2>Área de Estudio y Planteamiento del Problema</h2>
+        <div class="design-container">
+            <h3>¿Cuál es el problema?</h3>
+            <p>La alopecia es la pérdida anormal de cabello que afecta a hombres y mujeres de todas las edades, impactando no solo su apariencia física sino también su bienestar emocional.</p>
+            
+            <div class="stat-box">
+                <span class="stat-number">60%</span>
+                <span class="stat-text">de los hombres experimenta algún grado de alopecia antes de los 50 años</span>
+            </div>
+            
+            <h3>¿Por qué representa un problema?</h3>
+            <p>La alopecia impacta significativamente en la imagen personal, la autoestima y la confianza social de quienes la padecen, generando consecuencias psicológicas y emocionales que afectan la calidad de vida.</p>
+            
+            <div class="highlight">
+                <h3>Nuestro Enfoque</h3>
+                <p>Comprender la alopecia ayudaría a desarrollar soluciones efectivas y realistas que mejoren la calidad de vida de quienes la padecen.</p>
+            </div>
+            
+            <h3>Nuestra Propuesta</h3>
+            <p>Proponemos usar biología sintética para estimular el crecimiento del cabello de manera segura y efectiva, creando alternativas más accesibles y eficientes que los tratamientos actuales.</p>
+        </div>
+    </section>
+
+    <section id="diseno" class="section">
+        <h2>Diseño Genético y Ensamblaje de Partes Biológicas</h2>
+        <div class="design-container">
+            <div class="design-image">
+                <img src="https://i.ibb.co/rGW4Fx4M/Whats-App-Image-2025-09-28-at-8-29-46-PM.jpg" alt="Diseño del plásmido en Benchling" class="benchling-image">
+                <p><strong>Figura 1.</strong> Mapa plasmídico conceptual pUC19_FGF7_lac. Se indican: promotor inducible (Lac), RBS, CDS de FGF‑7 (reportada para estimular funciones de papila dérmica), terminador y marcador AmpR.</p>
+            </div>
+            
+            <h3>Descripción del Diseño</h3>
+            <p>Se diseñó un plásmido de clonación basado en el vector pUC19 que incorpora un promotor inducible, un RBS, el gen codificante de FGF‑7 (factor de crecimiento epitelial implicado en la regulación y proliferación de folículos pilosos) y un terminador de transcripción. El plásmido conserva el gen de resistencia a ampicilina (AmpR) propio del backbone pUC19, usado como marcador de selección en la fase de clonaje teórico. El diseño pretende permitir la expresión controlada de FGF‑7 para estudios funcionales y caracterización bioquímica en contextos de investigación sobre alopecia.</p>
+            
+            <div class="circuit-diagram">
+                <h4>Esquema del Circuito Genético</h4>
+                <p><strong>Promotor Lac → RBS → CDS FGF-7 → Terminador</strong></p>
+                <p>Este diseño lineal representa el flujo de información genética en nuestro constructo plasmídico.</p>
+            </div>
+            
+            <h3>Bacteria Utilizada: Escherichia coli K‑12</h3>
+            <div class="design-image">
+                <img src="https://i.ibb.co/MDfgzmkL/620-E-coli-web.jpg" alt="Escherichia coli K-12" class="bacteria-image">
+                <p><strong>Figura 2.</strong> Escherichia coli K-12 - Cepa bacteriana de laboratorio</p>
+            </div>
+            
+            <h3>Descripción de la Bacteria</h3>
+            <p>Se propone usar como hospedador de laboratorio <strong>Escherichia coli K‑12</strong>, una cepa de trabajo estándar en biología molecular. E. coli K‑12 es una bacteria gram‑negativa de rápido crecimiento, ampliamente caracterizada, y usada de forma rutinaria para clonaje y producción de proteínas recombinantes en contextos de investigación.</p>
+            
+            <div class="safety-notice">
+                <strong>Nota de Seguridad:</strong> En este trabajo la referencia a E. coli K‑12 tiene carácter exclusivamente documental; cualquier trabajo experimental con bacterias debe realizarse bajo supervisión y siguiendo protocolos y normas institucionales de bioseguridad.
+            </div>
+            
+            <h3>Elementos del Plásmido</h3>
+            <ul>
+                <li><strong>Backbone:</strong> pUC19 (vector de clonación, alta copia)</li>
+                <li><strong>Promotor:</strong> Lac operon (inducible)</li>
+                <li><strong>RBS:</strong> Sitio de unión ribosómica estándar</li>
+                <li><strong>CDS:</strong> Gen FGF-7 (Fibroblast Growth Factor 7)</li>
+                <li><strong>Terminador:</strong> Terminador de transcripción eficiente</li>
+                <li><strong>Marcador de selección:</strong> AmpR (resistencia a ampicilina)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="resultados" class="section">
+        <h2>Resultados Esperados</h2>
+        <div class="design-container">
+            <h3>¿Qué queremos conseguir con la construcción?</h3>
+            <p>Desarrollar un sistema bacteriano seguro que pueda colonizar temporalmente el cuero cabelludo y estimular el crecimiento del cabello mediante la producción controlada de factores de crecimiento folicular.</p>
+            
+            <div class="design-image">
+                <img src="https://i.ibb.co/6R5n4qq1/Whats-App-Image-2025-09-28-at-8-29-45-PM-1.jpg" alt="Esquema del mecanismo de acción" class="benchling-image">
+                <p><strong>Figura 3.</strong> Esquema del mecanismo de acción propuesto para FGF-7 en folículos pilosos</p>
+            </div>
+            
+            <h3>¿Qué esperamos que produzca nuestra bacteria?</h3>
+            <p>Esperamos que las bacterias modificadas genéticamente:</p>
+            <ul>
+                <li>Produzcan factores de crecimiento como FGF-7 de manera controlada</li>
+                <li>Estimulen la activación de folículos pilosos inactivos</li>
+                <li>Prolonguen la fase de crecimiento del cabello (fase anágena)</li>
+                <li>Mejoren la calidad y densidad del cabello</li>
+                <li>Mantengan un perfil de seguridad óptimo</li>
+            </ul>
+            
+            <div class="design-image">
+                <img src="https://i.ibb.co/gLy8YLMF/Whats-App-Image-2025-09-28-at-8-29-45-PM.jpg" alt="Representación de resultados" class="benchling-image">
+                <p><strong>Figura 4.</strong> Representación visual de los resultados esperados en crecimiento capilar</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="impacto" class="section">
+        <h2>Impacto Ético y Social</h2>
+        <div class="design-container">
+            <h3>Consideraciones Éticas</h3>
+            <p>El uso de organismos modificados genéticamente en aplicaciones cosméticas y terapéuticas requiere una evaluación rigurosa de riesgos y beneficios. Hemos implementado múltiples mecanismos de contención biológica para garantizar la seguridad.</p>
+            
+            <div class="safety-notice">
+                <strong>Limitaciones y consideraciones éticas:</strong> Este documento describe un diseño conceptual y no constituye autorización para llevar a cabo experimentos. Cualquier trabajo práctico con microorganismos o producción de proteínas recombinantes requiere supervisión docente, instalaciones adecuadas y cumplimiento de normativa de bioseguridad.
+            </div>
+            
+            <h3>Impacto Social</h3>
+            <div class="impact-section">
+                <div class="impact-card">
+                    <h4>Accesibilidad</h4>
+                    <p>Desarrollar tratamientos más económicos y accesibles que las opciones actuales</p>
+                </div>
+                <div class="impact-card">
+                    <h4>Autoestima</h4>
+                    <p>Mejorar la calidad de vida y confianza de las personas con alopecia</p>
+                </div>
+                <div class="impact-card">
+                    <h4>Innovación</h4>
+                    <p>Avanzar en el campo de la biología sintética aplicada a la salud</p>
+                </div>
+            </div>
+            
+            <p>Este proyecto representa un avance significativo en el tratamiento de la alopecia, ofreciendo una alternativa innovadora basada en principios científicos sólidos y consideraciones éticas responsables.</p>
+        </div>
+    </section>
+
+    <section id="equipo" class="section">
+        <h2>Nuestro Equipo</h2>
+        <div class="colegio-info">
+            <p>Estudiantes de 6º de Secundaria - Colegio San Agustín</p>
+        </div>
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-photo">GL</div>
+                <h3>Gianluca Garcia</h3>
+                <p>Estudiante</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">MM</div>
+                <h3>Martin Mercado</h3>
+                <p>Estudiante</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">FR</div>
+                <h3>Fabian Rocha</h3>
+                <p>Estudiante</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">AR</div>
+                <h3>Andres Rodriguez</h3>
+                <p>Estudiante</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">SS</div>
+                <h3>Santiago Sevilla</h3>
+                <p>Estudiante</p>
+            </div>
+            <div class="team-member">
+                <div class="team-photo">AT</div>
+                <h3>Arturo Terrazas</h3>
+                <p>Estudiante</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Proyecto de Biología Sintética - Colegio San Agustín</p>
+        <p>Alopecinis Calvinis - 2025</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
